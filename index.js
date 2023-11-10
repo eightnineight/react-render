@@ -21,15 +21,9 @@ export class ReactRender {
 
     #useRender = () => {
         const [, update] = useState({});
-
         this.#reload = () => {
             update?.({});
         }
-        useEffect(() => {
-            return () => {
-                this.#reload = this.#defaultReload;
-            }
-        }, []);
     }
 
     #render = (props) => {
