@@ -1,0 +1,50 @@
+import React, { Fragment, useState, useEffect } from 'react';
+import { v4 as uuid } from 'uuid';
+
+export class ReactRender {
+    #key = uuid();
+    #reload = this.#defaultReload;
+
+    ////////////////////////////////////////////////////
+    constructor() {
+        let Component = (props) => {
+            return this.#render(props);
+        }
+        Component.reload = () => {
+            this.#reload();
+        }
+        return Component;
+    }
+
+    ////////////////////////////////////////////////////
+    #defaultReload = () => { }
+
+    #useRender = () => {
+        const [, update] = useState({});
+
+        this.#reload = () => {
+            update?.({});
+        }
+        useEffect(() => {
+            return () => {
+                this.#reload = this.#defaultReload;
+            }
+        }, []);
+    }
+
+    #render = (props) => {
+        this.#useRender();
+        return (
+            <Fragment key={this.#key}>
+                {this.render(props)}
+            </Fragment>
+        )
+    }
+
+    render(props) {
+        return (
+            <Fragment>
+            </Fragment>
+        );
+    }
+};

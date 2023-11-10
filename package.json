@@ -1,6 +1,6 @@
 {
-  "name": "@ene/react-render",
-  "version": "0.0.1",
+  "name": "@eightnineight/react-render",
+  "version": "0.1.0",
   "description": "simplify React render",
   "main": "index.js",
   "type": "module",
@@ -23,5 +23,10 @@
     "url": "https://github.com/eightnineight/react-render/issues"
   },
   "homepage": "https://github.com/eightnineight/react-render#readme",
-  "dependencies": {}
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "react": "^18.2.0"
+  }
 }
