@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export class ReactRender {
@@ -7,6 +7,9 @@ export class ReactRender {
 
     ////////////////////////////////////////////////////
     constructor() {
+    }
+
+    create = () => {
         let Component = (props) => {
             return this.#render(props);
         }
