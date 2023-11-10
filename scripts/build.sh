@@ -1,0 +1,3 @@
+
+npm run build-clean
+npm run build-react
