@@ -1,0 +1,27 @@
+{
+  "name": "@ene/react-render",
+  "version": "0.0.1",
+  "description": "simplify React render",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eightnineight/react-render.git"
+  },
+  "keywords": [
+    "alarm",
+    "polling",
+    "timer"
+  ],
+  "author": "CHIH-HSIN HSU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eightnineight/react-render/issues"
+  },
+  "homepage": "https://github.com/eightnineight/react-render#readme",
+  "dependencies": {}
+}
