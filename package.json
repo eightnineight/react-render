@@ -1,13 +1,10 @@
 {
   "name": "@eightnineight/react-render",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "simplify React render",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build-clean": "rm -f ./index.js",
-    "build-react": "bash ./scripts/build-react.sh",
-    "build": "bash ./scripts/build.sh",
     "start": "node index.js"
   },
   "repository": {
@@ -27,16 +24,5 @@
   "homepage": "https://github.com/eightnineight/react-render#readme",
   "dependencies": {
     "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@babel/plugin-transform-runtime": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/register": "^7.22.15",
-    "babel-loader": "^9.1.3",
-    "react": "^18.2.0",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
   }
 }

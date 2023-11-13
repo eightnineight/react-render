@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export class ReactRender {
-    #key = uuid();
+    key = uuid();
     #reload = this.#defaultReload;
 
     ////////////////////////////////////////////////////
@@ -31,17 +31,10 @@ export class ReactRender {
 
     #render = (props) => {
         this.#useRender();
-        return (
-            <Fragment key={this.#key}>
-                {this.render(props)}
-            </Fragment>
-        )
+        return this.render(props);
     }
 
     render(props) {
-        return (
-            <Fragment>
-            </Fragment>
-        );
+        return;
     }
 };
