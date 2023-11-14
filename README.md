@@ -5,15 +5,21 @@
 -   Treat React as a simple GUI library to simplify things.
 -   Simple is Great.
 
+## Install
+
+```sh
+npm install @eightnineight/react-render
+```
+
 ## Usage
 
 ```
 NOTE:
-You should not use promise/async/await in ReactRender 
-layout override function, that's not a good pattern, 
+You should not use promise/async/await in ReactRender
+layout override function, that's not a good pattern,
 keep simple, just use React as simple GUI output library.
 
-You also should not continue using React's useState/useEffect 
+You also should not continue using React's useState/useEffect
 and related functions to manage state.
 ```
 
