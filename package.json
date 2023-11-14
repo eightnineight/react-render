@@ -12,9 +12,8 @@
     "url": "git+https://github.com/eightnineight/react-render.git"
   },
   "keywords": [
-    "alarm",
-    "polling",
-    "timer"
+    "react",
+    "render"
   ],
   "author": "CHIH-HSIN HSU",
   "license": "MIT",

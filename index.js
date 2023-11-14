@@ -3,38 +3,27 @@ import { v4 as uuid } from 'uuid';
 
 export class ReactRender {
     key = uuid();
-    #reload = this.#defaultReload;
 
-    ////////////////////////////////////////////////////
-    constructor() {
-    }
-
-    create = () => {
-        let Component = (props) => {
-            return this.#render(props);
-        }
-        Component.reload = () => {
-            this.#reload();
-        }
-        return Component;
-    }
+    constructor() { }
 
     ////////////////////////////////////////////////////
     #defaultReload = () => { }
 
     #useRender = () => {
         const [, update] = useState({});
-        this.#reload = () => {
+        this.reload = () => {
             update?.({});
         }
     }
 
-    #render = (props) => {
-        this.#useRender();
-        return this.render(props);
+    reload = this.#defaultReload;
+
+    layout(props) {
+        return;
     }
 
-    render(props) {
-        return;
+    render = (props) => {
+        this.#useRender();
+        return this.layout(props);
     }
 };
