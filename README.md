@@ -20,7 +20,7 @@ and related functions to manage state.
 ```js
 import { ReactRender } from "@eightnineight/react-render";
 
-class Button extends ReactRender {
+class Text extends ReactRender {
     constructor() {
         super();
     }
@@ -38,7 +38,7 @@ class App extends ReactRender {
     constructor() {
         super();
 
-        this.Btn = new Button();
+        this.counter = new Text();
 
         setInterval(() => {
             ++this.count;
@@ -49,10 +49,10 @@ class App extends ReactRender {
     // you need to override layout function
     // props is the same as props in react function component.
     layout = (props) => {
-        const Btn = this.Btn.render; // use ReactRender.render to output
+        const Counter = this.counter.render; // use ReactRender.render to output
 
         // you can use ID as key (ID is a unique uuid)
-        return <Btn key={Btn.ID}>{this.count}</Btn>;
+        return <Counter key={Counter.ID}>{this.count}</Counter>;
     };
 }
 ```
