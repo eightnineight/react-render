@@ -9,9 +9,12 @@
 
 ```
 NOTE:
-You should not use promise/async/await in ReactRender layout override function,that's not a good pattern, keep simple, just use React as simple GUI output library.
+You should not use promise/async/await in ReactRender 
+layout override function, that's not a good pattern, 
+keep simple, just use React as simple GUI output library.
 
-You also should not continue using React's useState/useEffect and related functions to manage state.
+You also should not continue using React's useState/useEffect 
+and related functions to manage state.
 ```
 
 ```js
