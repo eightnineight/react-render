@@ -54,11 +54,11 @@ class App extends ReactRender {
 
     // you need to override layout function
     // props is the same as props in react function component.
-    layout = (props) => {
+    layout(props) {
         const Counter = this.counter.render; // use ReactRender.render to output
 
         // you can use ID as key (ID is a unique uuid)
         return <Counter key={Counter.ID}>{this.count}</Counter>;
-    };
+    }
 }
 ```
