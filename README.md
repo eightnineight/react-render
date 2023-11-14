@@ -41,7 +41,7 @@ class App extends ReactRender {
         this.Btn = new Button();
 
         setInterval(() => {
-            ++count;
+            ++this.count;
             this.reload(); // ReactRender.reload can update render
         }, 1000);
     }
