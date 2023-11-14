@@ -2,9 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export class ReactRender {
-    key = uuid();
-
-    constructor() { }
+    ID = uuid();
 
     ////////////////////////////////////////////////////
     #defaultReload = () => { }
@@ -16,14 +14,21 @@ export class ReactRender {
         }
     }
 
+    #render = (props) => {
+        this.#useRender();
+        return this.layout(props);
+    }
+
     reload = this.#defaultReload;
 
     layout(props) {
         return;
     }
 
-    render = (props) => {
-        this.#useRender();
-        return this.layout(props);
+    ////////////////////////////////////////////////////
+
+    constructor() {
+        this.#render.ID = this.ID;
+        this.render = this.#render;
     }
 };

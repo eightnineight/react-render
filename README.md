@@ -8,7 +8,7 @@
 ## Usage
 
 ```
-NOTE: 
+NOTE:
 You should not use promise/async/await in ReactRender layout override function,that's not a good pattern, keep simple, just use React as simple GUI output library.
 
 You also should not continue using React's useState/useEffect and related functions to manage state.
@@ -48,7 +48,8 @@ class App extends ReactRender {
     layout = (props) => {
         const Btn = this.Btn.render; // use ReactRender.render to output
 
-        return <Btn>{this.count}</Btn>;
+        // you can use ID as key (ID is a unique uuid)
+        return <Btn key={Btn.ID}>{this.count}</Btn>;
     };
 }
 ```

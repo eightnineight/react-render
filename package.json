@@ -1,6 +1,6 @@
 {
   "name": "@eightnineight/react-render",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "simplify React render",
   "main": "index.js",
   "type": "module",
