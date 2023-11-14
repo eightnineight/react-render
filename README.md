@@ -16,7 +16,7 @@ npm install @eightnineight/react-render
 ```
 NOTE:
 You should not use promise/async/await in ReactRender
-layout override function, that's not a good pattern,
+render override function, that's not a good pattern,
 keep simple, just use React as simple GUI output library.
 
 You also should not continue using React's useState/useEffect
@@ -24,6 +24,8 @@ and related functions to manage state.
 ```
 
 ```js
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { ReactRender } from "@eightnineight/react-render";
 
 class Text extends ReactRender {
@@ -31,9 +33,9 @@ class Text extends ReactRender {
         super();
     }
 
-    // you need to override layout function
+    // you need to override render function
     // props is the same as props in react function component.
-    layout(props) {
+    render(props) {
         return <div>{props.children}</div>;
     }
 }
@@ -52,13 +54,19 @@ class App extends ReactRender {
         }, 1000);
     }
 
-    // you need to override layout function
+    // you need to override render function
     // props is the same as props in react function component.
-    layout(props) {
-        const Counter = this.counter.render; // use ReactRender.render to output
+    render(props) {
+        const Counter = this.counter;
 
         // you can use ID as key (ID is a unique uuid)
         return <Counter key={Counter.ID}>{this.count}</Counter>;
     }
 }
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+const Application = new App();
+root.render(<Application />);
 ```
