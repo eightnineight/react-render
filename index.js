@@ -5,30 +5,34 @@ export class ReactRender {
     ID = uuid();
 
     ////////////////////////////////////////////////////
-    #defaultReload = () => { }
-
     #useRender = () => {
         const [, update] = useState({});
         this.reload = () => {
             update?.({});
         }
     }
-
     #render = (props) => {
         this.#useRender();
-        return this.layout(props);
+        return this.render(props);
     }
 
-    reload = this.#defaultReload;
-
-    layout(props) {
-        return;
-    }
+    reload = () => { }
+    render(props) { }
 
     ////////////////////////////////////////////////////
 
     constructor() {
-        this.#render.ID = this.ID;
-        this.render = this.#render;
+        this.#render = new Proxy(this.#render, {
+            get: (target, prop) => {
+                return this[prop];
+            },
+            set: (target, prop, value) => {
+                return this[prop] = value;
+            },
+            has: (target, prop) => {
+                return (prop in this);
+            }
+        });
+        return this.#render;
     }
 };
