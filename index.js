@@ -27,7 +27,8 @@ export class ReactRender {
                 return this[prop];
             },
             set: (target, prop, value) => {
-                return this[prop] = value;
+                this[prop] = value;
+                return true;
             },
             has: (target, prop) => {
                 return (prop in this);
